@@ -41,7 +41,6 @@
     }
     .login-card { background: #fff; padding: 24px 18px; border-radius: var(--radius); width: 100%; max-width: 320px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin: auto; }
     
-    /* LOGIN LOGO FIX */
     .login-card img { width: 90px; height: 90px; border-radius: 50%; object-fit: contain; margin-bottom: 8px; border: 2px solid var(--gold); background-color: #fff; padding: 2px; }
     .login-card h2 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1.2rem; margin-bottom: 4px; }
 
@@ -66,7 +65,6 @@
 
     .brand-header-flex { display: flex; align-items: center; gap: 10px; }
     
-    /* HEADER LOGO FIX */
     .brand-header-flex img { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; border: 1.5px solid var(--gold); background-color: #fff; padding: 2px; }
     .brand-title h1 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1.2rem; }
     .brand-title p { color: var(--gold); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
@@ -135,7 +133,6 @@
 
     .invoice-card { background: #FFF; width: 100%; max-width: 400px; border-radius: var(--radius); padding: 0 0 12px 0; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.3); margin: auto; overflow: hidden; }
     
-    /* INVOICE BANNER FIX */
     .invoice-banner-container { text-align: center; width: 100%; margin-bottom: 6px; background-color: #fff; }
     .invoice-banner-container img { width: 100%; max-height: 140px; display: block; object-fit: contain; }
     
@@ -727,7 +724,19 @@
 
       itemsBody.innerHTML = itemsHtml;
       document.getElementById("invSubtotalText").innerText = "Rs." + subtotalSum.toLocaleString();
-      document.getElementById("invShipping").innerText = "Rs." + (tx.shipping || 0).toLocaleString();
+      
+      // FREE SHIPPING DISPLAY FIX
+      const shippingVal = parseFloat(tx.shipping) || 0;
+      if (shippingVal === 0) {
+        document.getElementById("invShipping").innerText = "Free Shipping";
+        document.getElementById("invShipping").style.color = "#276749";
+        document.getElementById("invShipping").style.fontWeight = "bold";
+      } else {
+        document.getElementById("invShipping").innerText = "Rs." + shippingVal.toLocaleString();
+        document.getElementById("invShipping").style.color = "inherit";
+        document.getElementById("invShipping").style.fontWeight = "normal";
+      }
+
       document.getElementById("invGrandTotal").innerText = "Rs." + tx.totalAmount.toLocaleString();
 
       document.getElementById("invoiceModal").classList.add("active");
