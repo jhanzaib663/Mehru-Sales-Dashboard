@@ -40,7 +40,9 @@
       display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 12px;
     }
     .login-card { background: #fff; padding: 24px 18px; border-radius: var(--radius); width: 100%; max-width: 320px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin: auto; }
-    .login-card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 8px; border: 2px solid var(--gold); }
+    
+    /* LOGIN LOGO FIX */
+    .login-card img { width: 90px; height: 90px; border-radius: 50%; object-fit: contain; margin-bottom: 8px; border: 2px solid var(--gold); background-color: #fff; padding: 2px; }
     .login-card h2 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1.2rem; margin-bottom: 4px; }
 
     #loadingOverlay {
@@ -63,7 +65,9 @@
     }
 
     .brand-header-flex { display: flex; align-items: center; gap: 10px; }
-    .brand-header-flex img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--gold); }
+    
+    /* HEADER LOGO FIX */
+    .brand-header-flex img { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; border: 1.5px solid var(--gold); background-color: #fff; padding: 2px; }
     .brand-title h1 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1.2rem; }
     .brand-title p { color: var(--gold); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
@@ -130,8 +134,11 @@
     .modal-overlay.active { display: flex; }
 
     .invoice-card { background: #FFF; width: 100%; max-width: 400px; border-radius: var(--radius); padding: 0 0 12px 0; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.3); margin: auto; overflow: hidden; }
-    .invoice-banner-container { text-align: center; width: 100%; margin-bottom: 6px; }
-    .invoice-banner-container img { width: 100%; max-height: 120px; display: block; object-fit: cover; }
+    
+    /* INVOICE BANNER FIX */
+    .invoice-banner-container { text-align: center; width: 100%; margin-bottom: 6px; background-color: #fff; }
+    .invoice-banner-container img { width: 100%; max-height: 140px; display: block; object-fit: contain; }
+    
     .invoice-content-padding { padding: 0 12px; }
     .invoice-header { text-align: center; border-bottom: 2px dashed var(--gold); padding-bottom: 6px; margin-bottom: 8px; }
     .invoice-header h2 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1.1rem; margin-top: 2px; }
@@ -353,7 +360,7 @@
   </div>
 
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxmrvWcTiyK_I4msPQGtGHK9MP6vRfzcgfhuLlCSb--VlN_PiglwdFojiIDy_yYyWku8A/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwydvoSHEbUXLHmwlg0gh-LhheMZJBrcmB3fFq6yuf90_F_q9gUx77S1UQXw2YNxhiFhQ/exec";
     const AUTH_EMAIL = "jhanzaib@mehrufabics.pk";
     const AUTH_PASS = "Jh@nzaib786**";
 
