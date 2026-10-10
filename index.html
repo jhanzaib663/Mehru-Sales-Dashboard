@@ -23,7 +23,7 @@
       --gold: #C69446;           /* Metallic Warm Gold */
       --gold-light: #E2BF7D;     /* Soft Gold */
       --text-main: #1F1A1B;      /* Charcoal Black */
-      --bg-canvas: #FEF6E5;      /* Naya Warm Gold-Ivory Background */
+      --bg-canvas: #FEF6E5;      /* Warm Gold-Ivory Background */
       --card-bg: #FFFFFF;        /* Pure White */
       --text-muted: #718096;
       --border-color: #EADCB9;   /* Soft Ivory Border */
@@ -133,8 +133,9 @@
 
     .invoice-card { background: #FFF; width: 100%; max-width: 400px; border-radius: var(--radius); padding: 0 0 12px 0; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.3); margin: auto; overflow: hidden; }
     
-    .invoice-banner-container { text-align: center; width: 100%; margin-bottom: 6px; background-color: #fff; }
-    .invoice-banner-container img { width: 100%; max-height: 140px; display: block; object-fit: contain; }
+    /* INVOICE BANNER FIX */
+    .invoice-banner-container { text-align: center; width: 100%; margin-bottom: 8px; background-color: #FFFFFF; overflow: hidden; border-bottom: 2px solid var(--gold); }
+    .invoice-banner-container img { width: 100%; height: auto; max-height: 150px; display: block; object-fit: cover; }
     
     .invoice-content-padding { padding: 0 12px; }
     .invoice-header { text-align: center; border-bottom: 2px dashed var(--gold); padding-bottom: 6px; margin-bottom: 8px; }
