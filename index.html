@@ -23,10 +23,10 @@
       --gold: #C69446;           /* Metallic Warm Gold */
       --gold-light: #E2BF7D;     /* Soft Gold */
       --text-main: #1F1A1B;      /* Charcoal Black */
-      --bg-canvas: #FCFBF7;      /* Warm Off-White / Cream */
+      --bg-canvas: #FEF6E5;      /* Naya Warm Gold-Ivory Background */
       --card-bg: #FFFFFF;        /* Pure White */
       --text-muted: #718096;
-      --border-color: #E2E8F0;
+      --border-color: #EADCB9;   /* Soft Ivory Border */
       --shadow: 0 4px 12px rgba(82, 2, 26, 0.08);
       --radius: 12px;
     }
@@ -36,16 +36,16 @@
     body { padding: 8px; min-height: 100vh; }
 
     #loginOverlay {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(82, 2, 26, 0.96);
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #FEF6E5;
       display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 12px;
     }
-    .login-card { background: #fff; padding: 24px 18px; border-radius: var(--radius); width: 100%; max-width: 320px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin: auto; }
+    .login-card { background: #FFFFFF; padding: 28px 22px; border-radius: var(--radius); width: 100%; max-width: 330px; text-align: center; box-shadow: 0 10px 30px rgba(82, 2, 26, 0.12); border: 1.5px solid var(--gold-light); margin: auto; }
     
-    .login-card img { width: 90px; height: 90px; border-radius: 50%; object-fit: contain; margin-bottom: 8px; border: 2px solid var(--gold); background-color: #fff; padding: 2px; }
-    .login-card h2 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1.2rem; margin-bottom: 4px; }
+    .login-card img { width: 95px; height: 95px; border-radius: 50%; object-fit: contain; margin-bottom: 10px; border: 2px solid var(--gold); background-color: #FFFFFF; padding: 2px; }
+    .login-card h2 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1.25rem; margin-bottom: 4px; }
 
     #loadingOverlay {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(252, 251, 247, 0.88);
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(254, 246, 229, 0.92);
       display: none; align-items: center; justify-content: center; z-index: 9998; flex-direction: column; gap: 12px; font-weight: 700; color: var(--primary);
     }
     .spinner { width: 36px; height: 36px; border: 4px solid var(--border-color); border-top: 4px solid var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; }
@@ -65,7 +65,7 @@
 
     .brand-header-flex { display: flex; align-items: center; gap: 10px; }
     
-    .brand-header-flex img { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; border: 1.5px solid var(--gold); background-color: #fff; padding: 2px; }
+    .brand-header-flex img { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; border: 1.5px solid var(--gold); background-color: #FFF; padding: 2px; }
     .brand-title h1 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1.2rem; }
     .brand-title p { color: var(--gold); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
@@ -77,7 +77,7 @@
     }
 
     .filter-bar select, .filter-bar input[type="date"], .form-control {
-      padding: 7px 8px; border: 1.5px solid var(--border-color); border-radius: 8px; outline: none; font-size: 0.78rem; background: #fff; width: 100% !important; max-width: 100% !important; display: block;
+      padding: 7px 8px; border: 1.5px solid var(--border-color); border-radius: 8px; outline: none; font-size: 0.78rem; background: #FFF; width: 100% !important; max-width: 100% !important; display: block;
     }
 
     .btn {
@@ -89,7 +89,7 @@
     .btn-secondary-accent:hover { background-color: #8c0a41; }
     .btn-gold { background-color: var(--gold); color: #FFFFFF !important; }
     .btn-gold:hover { background-color: #a87d3a; }
-    .btn-secondary { background-color: #EDF2F7; color: var(--text-main); }
+    .btn-secondary { background-color: #F3E9D2; color: var(--text-main); }
     .btn-action-inv { background-color: var(--primary); color: #FFFFFF !important; padding: 4px 10px; border-radius: 6px; font-size: 0.72rem; text-decoration: none; border: none; font-weight: 600; }
     .btn-danger { background-color: #FFF5F5; color: #E53E3E; border: 1px solid #FEB2B2; padding: 4px 8px; font-size: 0.7rem; }
 
@@ -159,7 +159,7 @@
     <div class="login-card">
       <img src="Mehru Logo.jpeg" alt="Mehru Logo" onerror="this.style.display='none';">
       <h2>MEHRU FABRICS</h2>
-      <p style="font-size:0.7rem; color: var(--text-muted); margin-bottom: 10px;">Clothing Management Login</p>
+      <p style="font-size:0.7rem; color: var(--text-muted); margin-bottom: 12px;">Clothing Management Login</p>
       
       <div class="form-group">
         <label>Email</label>
@@ -170,7 +170,7 @@
         <input type="password" id="loginPass" class="form-control" placeholder="••••••••">
       </div>
 
-      <button class="btn btn-primary" style="width: 100%; margin-top:4px;" onclick="unlockDashboard()">Login</button>
+      <button class="btn btn-primary" style="width: 100%; margin-top:6px;" onclick="unlockDashboard()">Login</button>
       <p id="loginError" style="color:#E53E3E; font-size:0.68rem; margin-top:6px; display:none;">Invalid Credentials!</p>
     </div>
   </div>
@@ -185,7 +185,7 @@
         </div>
       </div>
       <div class="filter-bar">
-        <select id="monthFilter" onchange="loadDashboardData()" style="grid-column: span 2;">
+        <select id="monthFilter" onchange="loadDashboardData(false)" style="grid-column: span 2;">
           <option value="LOADING">Loading Months...</option>
         </select>
         <input type="date" id="filterStartDate" onchange="applyCustomDateFilter()">
@@ -357,12 +357,13 @@
   </div>
 
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwydvoSHEbUXLHmwlg0gh-LhheMZJBrcmB3fFq6yuf90_F_q9gUx77S1UQXw2YNxhiFhQ/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxmrvWcTiyK_I4msPQGtGHK9MP6vRfzcgfhuLlCSb--VlN_PiglwdFojiIDy_yYyWku8A/exec";
     const AUTH_EMAIL = "jhanzaib@mehrufabics.pk";
     const AUTH_PASS = "Jh@nzaib786**";
 
     let cachedTransactions = [];
     let currentActiveTx = null;
+    let isFetchingData = false;
 
     window.onload = function() {
       const today = new Date().toISOString().split('T')[0];
@@ -445,7 +446,10 @@
       if (el) el.remove();
     }
 
-    function loadDashboardData(showSpinner = false) {
+    function loadDashboardData(showSpinner = true) {
+      if (isFetchingData) return;
+      isFetchingData = true;
+
       if (showSpinner) document.getElementById("loadingOverlay").style.display = "flex";
 
       const filterVal = document.getElementById("monthFilter").value;
@@ -456,10 +460,11 @@
       const callbackName = "cb_" + Date.now();
       window[callbackName] = function(response) {
         delete window[callbackName];
-        document.body.removeChild(script);
+        if (script.parentNode) script.parentNode.removeChild(script);
         document.getElementById("loadingOverlay").style.display = "none";
+        isFetchingData = false;
 
-        if (response.status === "success") {
+        if (response && response.status === "success") {
           renderDashboard(response, targetMonth);
         }
       };
@@ -470,6 +475,12 @@
                  + "&endDate=" + encodeURIComponent(endD) 
                  + "&callback=" + callbackName;
       
+      script.onerror = function() {
+        document.getElementById("loadingOverlay").style.display = "none";
+        isFetchingData = false;
+        showAlert("Failed to sync data", true);
+      };
+
       document.body.appendChild(script);
     }
 
@@ -725,7 +736,6 @@
       itemsBody.innerHTML = itemsHtml;
       document.getElementById("invSubtotalText").innerText = "Rs." + subtotalSum.toLocaleString();
       
-      // FREE SHIPPING DISPLAY FIX
       const shippingVal = parseFloat(tx.shipping) || 0;
       if (shippingVal === 0) {
         document.getElementById("invShipping").innerText = "Free Shipping";
